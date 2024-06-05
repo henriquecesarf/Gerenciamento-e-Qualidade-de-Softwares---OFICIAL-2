@@ -2,7 +2,7 @@ describe('Testes de API de Matrículas', () => {
   const headers = { 'X-API-KEY': Cypress.env('apiKey') };
   const baseUrl = 'http://localhost:8080/v1/matriculas/';
 
-  it('Consulta dados de uma matrícula regular', () => {
+  it('Consulta dados de uma matrícula atravez do número da matricula', () => {
     const matricula = 4653421;
 
     cy.request({
@@ -27,7 +27,7 @@ describe('Testes de API de Matrículas', () => {
     });
   });
 
-  it('Deve retornar uma mensagem de erro para matrícula com pagamento em atraso', () => {
+  it('Deve retornar uma mensagem de erro para a consulta de uma matrícula com pagamento em atraso', () => {
     const matriculaAtrasada = 5566778;
 
     cy.request({
